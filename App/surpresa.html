@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: auto;
+      background-image: url('https://i.pinimg.com/originals/80/52/7f/80527feaca23da446338c1a17acfc98b.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .img{
+      height: 110px;
+      width: 90px;
+      border-radius: 100%;
+    }
+
+    #quote {
+      font-size: 30px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 80%; /* Mudança aqui para tornar responsivo */
+      max-width: 500px; /* Adicionado para limitar a largura máxima */
+      height: 150px;
+      overflow: auto;
+      background-color: #f2f2f2; /* Cor de fundo de fallback */
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    h1 i {
+      color: red;
+      font-size: 40px;
+      margin-right: 10px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff0000; /* Cor do botão do cupom */
+      color: #ffffff; /* Cor do texto do botão do cupom */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Estilos para o cupom */
+    .coupon-container {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: 80%; /* Mudança aqui para tornar responsivo */
+      max-width: 500px; /* Adicionado para limitar a largura máxima */
+      height: 150px;
+      overflow: auto;
+      background-color: #f2f2f2; /* Cor de fundo de fallback */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+    }
+
+    .coupon-code {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff0000; /* Cor do código do cupom */
+    }
+
+    .coupon-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff0000; /* Cor do botão do cupom */
+      color: #ffffff; /* Cor do texto do botão do cupom */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div><img src="image.jpg" alt="Amores" class="img"></div>
+  <div>
+    <h1>
+      <i class="fas fa-heart"></i>Feliz dia dos Namorados Meu amor 
+    </h1>
+  </div>
+  <button onclick="generateQuote()">Gerar Frase</button>
+  <div id="quote" ><i class="fas fa-heart"></i> <i class="fas fa-heart"></i> Te amo até o céu <i class="fas fa-heart"> </i><i class="fas fa-heart"></i></div>
+  <br><br><br><br>
+  <div class="coupon-container" style="margin-bottom: auto;">
+    <h2>Parabéns! Aqui está um cupom especial para você:</h2>
+    <p class="coupon-code" id="couponCode"></p>
+    <button class="coupon-button" onclick="generateCoupon()">Gerar Cupom</button>
+  </div>
+
+  <script>
+    var quotes = [
+      "Você é a variável que dá sentido à minha vida.",
+      "Meu amor por você é como um loop infinito, nunca acaba.",
+      "Ao seu lado, meu coração é um compilador feliz, sem erros.",
+      "Você é a função que eu sempre quis chamar, meu amor verdadeiro.",
+      "Com você, cada momento é como um código bem escrito, perfeito e sem bugs.",
+      "Nosso amor é como um algoritmo eficiente, sempre encontrando a melhor solução.",
+      "Você é a API do meu coração, tornando tudo mais fácil e bonito."
+    ];
+
+    function generateQuote() {
+      var quoteContainer = document.getElementById("quote");
+      var randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteContainer.innerHTML = quotes[randomIndex];
+    }
+
+    function generateCoupon() {
+      var couponContent = "Cupom de Presente: VOCÊ GANHOU UM JANTAR ROMÂNTICO COM SUA ESPOSINHA ";
+      document.getElementById('couponCode').innerHTML = couponContent;
+    }
+  </script>
+</body>
+</html>
